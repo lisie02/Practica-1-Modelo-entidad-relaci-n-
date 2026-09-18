@@ -1,0 +1,26 @@
+Archivos de sistema
+
+.DS_Store
+Thumbs.db
+
+Archivos de Visual Studio Code
+
+.vscode/
+
+Archivos temporales
+
+*.tmp
+*.temp
+
+Archivos de respaldo
+
+*.bak
+*~
+
+Variables de entorno
+
+.env
+
+Logs
+
+*.log
