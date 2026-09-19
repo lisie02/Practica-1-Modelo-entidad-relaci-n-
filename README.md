@@ -2,11 +2,11 @@
 
 
 
-\## Datos de los estudiantes
+Datos de los estudiantes
 
 
 
-\### Nombre completo
+Nombre completo
 
 \- Marquez Chávez Kassumy Nallely
 
@@ -16,7 +16,7 @@
 
 
 
-\### Número de boleta
+Número de boleta
 
 \- 2026630376
 
@@ -26,7 +26,7 @@
 
 
 
-\### Información académica
+Información académica
 
 
 
@@ -44,11 +44,11 @@
 
 
 
-\# Índice
+Índice
 
 
 
-\## Documentos
+Documentos
 
 
 
@@ -60,7 +60,7 @@
 
 
 
-\## Modelo
+Modelo
 
 
 
@@ -68,7 +68,7 @@
 
 
 
-\## Entorno
+Entorno
 
 
 
@@ -76,7 +76,7 @@
 
 
 
-\## Evidencias
+Evidencias
 
 
 
@@ -90,7 +90,7 @@
 
 
 
-\# Introducción
+Introducción
 
 
 
@@ -106,7 +106,7 @@ Además, se desarrolla un modelo entidad-relación basado en una problemática r
 
 
 
-\# Proyecto: Impacto Ambiental de Productos Cotidianos
+Proyecto: Impacto Ambiental de Productos Cotidianos
 
 
 
@@ -138,7 +138,7 @@ La propuesta contempla información sobre:
 
 
 
-\# Objetivo
+Objetivo
 
 
 
@@ -150,7 +150,7 @@ Comprender los fundamentos de las bases de datos y aplicar dichos conocimientos 
 
 
 
-\# Estado del Proyecto
+Estado del Proyecto
 
 
 
