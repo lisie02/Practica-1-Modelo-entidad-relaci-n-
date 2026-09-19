@@ -44,7 +44,7 @@
 
 
 
-\# Índice de la práctica
+\# Índice
 
 
 
@@ -80,13 +80,7 @@
 
 
 
-\### Git
-
 \- evidencias/git/
-
-
-
-\### Docker
 
 \- evidencias/docker/
 
@@ -100,11 +94,11 @@
 
 
 
-En esta práctica se estudian los conceptos fundamentales de las bases de datos y los Sistemas Gestores de Bases de Datos. También se utilizan herramientas como Git, GitHub, Docker y PostgreSQL para crear un entorno de trabajo y llevar un control de las modificaciones realizadas durante el proyecto.
+En esta práctica se estudian los conceptos fundamentales de las bases de datos y los Sistemas Gestores de Bases de Datos. Asimismo, se emplean herramientas como Git, GitHub, Docker y PostgreSQL para construir un entorno de trabajo controlado y documentado.
 
 
 
-Además, se desarrolla un modelo entidad-relación aplicado a un problema de la vida real.
+Además, se desarrolla un modelo entidad-relación basado en una problemática real relacionada con el impacto ambiental de productos cotidianos.
 
 
 
@@ -112,19 +106,19 @@ Además, se desarrolla un modelo entidad-relación aplicado a un problema de la 
 
 
 
-\# Proyecto: Impacto ambiental de productos cotidianos
+\# Proyecto: Impacto Ambiental de Productos Cotidianos
 
 
 
-El proyecto consiste en desarrollar una propuesta de base de datos que permita organizar información relacionada con el impacto ambiental de diferentes productos de uso cotidiano.
+El proyecto consiste en diseñar una base de datos que permita almacenar, organizar y consultar información relacionada con el impacto ambiental de distintos productos de uso cotidiano.
 
 
 
-Se consideran aspectos como:
+La propuesta contempla información sobre:
 
 
 
-\- Materiales utilizados.
+\- Materiales de fabricación.
 
 \- Consumo de agua.
 
@@ -136,6 +130,8 @@ Se consideran aspectos como:
 
 \- Posibilidad de reciclaje.
 
+\- Fuentes de información ambiental.
+
 
 
 \---
@@ -146,7 +142,7 @@ Se consideran aspectos como:
 
 
 
-El objetivo de esta práctica es comprender los fundamentos de las bases de datos y aplicar estos conocimientos mediante el desarrollo de un modelo entidad-relación.
+Comprender los fundamentos de las bases de datos y aplicar dichos conocimientos mediante la elaboración de un modelo entidad-relación, utilizando herramientas de control de versiones y contenedores para documentar y administrar el desarrollo del proyecto.
 
 
 
@@ -154,9 +150,9 @@ El objetivo de esta práctica es comprender los fundamentos de las bases de dato
 
 
 
-\# Estado del proyecto
+\# Estado del Proyecto
 
 
 
-\*\*Práctica completada\*\*
+Práctica completada y versionada en Git/GitHub.
 
