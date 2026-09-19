@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: practica1
+
+    environment:
+      POSTGRES_USER: lis
+      POSTGRES_PASSWORD: 262607
+      POSTGRES_DB: escuela
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
