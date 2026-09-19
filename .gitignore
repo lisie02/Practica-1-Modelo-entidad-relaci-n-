@@ -1,0 +1,18 @@
+# Archivos de sistema
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# IntelliJ
+.idea/
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+
+# Python
+__pycache__/
