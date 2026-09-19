@@ -23,22 +23,22 @@
 
 ### Documentos
 
-- [Investigación de bases de datos](docs/investigación-base-de-datos.pdf)
-- [Estado del arte](docs/estado-del-arte.pdf)
-- [Caso de estudio](docs/caso-de-estudio.pdf)
+- <a href="./docs/investigación-base-de-datos.pdf?raw=true">Investigación de bases de datos</a>
+- <a href="./docs/estado-del-arte.pdf?raw=true">Estado del arte</a>
+- <a href="./docs/caso-de-estudio.pdf?raw=true">Caso de estudio</a>
 
 ### Modelo
 
-- [Diagrama entidad-relación](modelo/diagrama-er.png)
+- <a href="./modelo/diagrama-er.png">Diagrama entidad-relación</a>
 
 ### Entorno
 
-- [Compose](entorno/compose.yaml)
+- <a href="./entorno/compose.yaml">Compose</a>
 
 ### Evidencias
 
-- [Git](evidencias/git/)
-- [Docker](evidencias/docker/)
+- <a href="./evidencias/git/evidencia-Git.pdf?raw=true">Git</a>
+- <a href="./evidencias/docker/evidencia-docker.pdf?raw=true">Docker</a>
 
 ---
 
