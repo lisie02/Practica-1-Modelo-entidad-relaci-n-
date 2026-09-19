@@ -48,29 +48,47 @@
 
 
 
-1\. #introducción
+\## Documentos
 
-2\. #ejercicio-1-control-de-versiones-con-git-y-github
 
-&#x20;  - Parte A. Investigación
 
-&#x20;  - Parte B. Práctica
+\- docs/investigacion-bases-de-datos.pdf
 
-3\. #ejercicio-2-el-sistema-gestor-en-un-contenedor-docker
+\- docs/estado-del-arte.pdf
 
-&#x20;  - Parte A. Investigación
+\- docs/caso-de-estudio.pdf
 
-&#x20;  - Parte B. Práctica
 
-4\. \[Ejercicio 3-investigación-qué-es-una-base-de-datos
 
-5\. #ejercicio-4-estado-del-arte-tres-artículos-científicos
+\## Modelo
 
-6\. \[Ejercicio 5: Caso de estudio y modelo entidadrelación
 
-7\. #conclusiones
 
-8\. #referencias
+\- modelo/diagrama-er.png
+
+
+
+\## Entorno
+
+
+
+\- entorno/compose.yaml
+
+
+
+\## Evidencias
+
+
+
+\### Git
+
+\- evidencias/git/
+
+
+
+\### Docker
+
+\- evidencias/docker/
 
 
 
@@ -98,5 +116,47 @@ Además, se desarrolla un modelo entidad-relación aplicado a un problema de la 
 
 
 
-El proyecto consiste en desarrollar una propuesta de base
+El proyecto consiste en desarrollar una propuesta de base de datos que permita organizar información relacionada con el impacto ambiental de diferentes productos de uso cotidiano.
+
+
+
+Se consideran aspectos como:
+
+
+
+\- Materiales utilizados.
+
+\- Consumo de agua.
+
+\- Consumo de energía.
+
+\- Emisiones de CO₂.
+
+\- Generación de residuos.
+
+\- Posibilidad de reciclaje.
+
+
+
+\---
+
+
+
+\# Objetivo
+
+
+
+El objetivo de esta práctica es comprender los fundamentos de las bases de datos y aplicar estos conocimientos mediante el desarrollo de un modelo entidad-relación.
+
+
+
+\---
+
+
+
+\# Estado del proyecto
+
+
+
+\*\*Práctica completada\*\*
 
