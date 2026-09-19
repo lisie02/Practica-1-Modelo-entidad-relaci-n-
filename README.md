@@ -2,16 +2,18 @@ Práctica 1: Modelo Entidad-Relación
 
 Datos de los estudiantes
 
-Nombre completo: 
+Nombre completo:
 Marquez Chávez Kassumy Nallely
-Gutierréz Cruz Alison 
+Gutierréz Cruz Alison
 Suárez Mendoza Lis Rosaura
 
 
+
 Número de boleta:
-2026630376 
-2026670031 
+2026630376
+2026670031
 2024440302
+
 
 
 Grupo: 3BV1
@@ -25,17 +27,19 @@ Institución: Instituto Politécnico Nacional
 Índice de la práctica
 
 Introducción
-Ejercicio 1: Control de versiones  con Git y GitHub 
-     Parte A. Investigación
-     Parte B. Práctica
+Ejercicio 1: Control de versiones  con Git y GitHub
+Parte A. Investigación
+Parte B. Práctica
 Ejercicio 2. El sistema gestor en un contenedor: Docker
-     Parte A. Investigación
-     Parte B. Práctica
+Parte A. Investigación
+Parte B. Práctica
 Ejercicio 3. Investigación: qué es una base de datos
 Ejercicio 4. Estado del arte: tres artículos científicos
 Ejercicio 5. Caso de estudio y modelo entidad-relación
 Conclusiones
 Referencias
+
+
 
 Introducción
 
@@ -50,4 +54,16 @@ El proyecto consiste en desarrollar una propuesta de base de datos que permita o
 Se consideran aspectos como materiales, consumo de agua, consumo de energía, emisiones de CO₂, generación de residuos y posibilidad de reciclaje.
 
 
+
+Objetivo
+
+El objetivo de esta práctica es comprender los fundamentos de las bases de datos y aplicar estos conocimientos mediante el desarrollo de un modelo entidad-relación.
+
+
+
+
+
+
+
 Estado del proyecto: En desarrollo.
+
