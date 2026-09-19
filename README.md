@@ -23,7 +23,7 @@
 
 ### Documentos
 
-- [Investigación de bases de datos](docs/investigacion-bases-de-datos.pdf)
+- [Investigación de bases de datos](docs/investigación-base-de-datos.pdf)
 - [Estado del arte](docs/estado-del-arte.pdf)
 - [Caso de estudio](docs/caso-de-estudio.pdf)
 
