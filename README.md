@@ -4,7 +4,7 @@
 
 **Landing Page:**
 
-[🌐 Abrir proyecto EcoData](./index.html)
+[🌐 Abrir proyecto EcoData](https://lisie02.github.io/Practica-1-Modelo-entidad-relaci-n-/index.html)
 
 ---
 
