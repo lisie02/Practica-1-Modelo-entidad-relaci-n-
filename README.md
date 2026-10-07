@@ -1,3 +1,48 @@
+# Entregables y enlaces
+
+## 🌱 Proyecto propio: EcoData
+
+**Landing Page:**
+
+[🌐 Abrir proyecto EcoData](./index.html)
+
+---
+
+## Proyecto asignado
+
+**Fork del proyecto:**
+
+[🔗 PublicMunicipalWorks_DWH](https://github.com/lisie02/PublicMunicipalWorks_DWH)
+
+**Versión publicada:**
+
+[🌐 Abrir versión publicada](https://lisie02.github.io/PublicMunicipalWorks_DWH/)
+
+---
+
+## Presentación
+
+[📄 Ver presentación de la práctica](./presentacion%20primera%20parte%20proyecto.pdf)
+
+---
+
+## Fichas de los artículos científicos
+
+[📄 Ver fichas de los tres artículos](./Fichas_Articulos.md)
+
+---
+
+## 👥 Integrantes y contribuciones
+
+| Integrante | Actividades realizadas |
+|---|---|
+| Marquez Chávez Kassumy Nallely | Artículo |
+| Gutiérrez Cruz Alison | Proyecto asinado |
+| Suárez Mendoza Lis Rosaura | Proyecto propio: EcoData |
+| Rivera Munguía Ameyalli |  |
+
+---
+
 # Práctica 1: Modelo Entidad-Relación
 
 ## Datos de los estudiantes
