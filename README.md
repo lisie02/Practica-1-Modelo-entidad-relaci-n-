@@ -39,7 +39,7 @@
 | Marquez Chávez Kassumy Nallely | Artículo |
 | Gutiérrez Cruz Alison | Proyecto asinado |
 | Suárez Mendoza Lis Rosaura | Proyecto propio: EcoData |
-| Rivera Munguía Ameyalli |  |
+| Rivera Munguía Ameyalli | Modelo Entidad Relacion |
 
 ---
 
