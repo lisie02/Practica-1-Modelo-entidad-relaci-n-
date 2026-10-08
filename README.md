@@ -42,6 +42,10 @@
 - <a href="./evidencias/git/evidencia-Git.pdf?raw=true">Git</a>
 - <a href="./evidencias/docker/evidencia-docker.pdf?raw=true">Docker</a>
 
+### Propuestas para mejorar el  proyecto
+- <a href="">Ameyalli</a>
+
+
 ---
 
 ## Introducción
