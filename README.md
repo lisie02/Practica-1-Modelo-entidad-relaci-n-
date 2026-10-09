@@ -45,7 +45,7 @@ En la siguiente presentación se expone el desarrollo del proyecto asignado, el 
 | Suárez Mendoza Lis Rosaura | Proyecto propio: EcoData |
 | Rivera Munguía Ameyalli | Modelo Entidad Relacion |
 
----
+---  
 
 # Práctica 1: Modelo Entidad-Relación
 
