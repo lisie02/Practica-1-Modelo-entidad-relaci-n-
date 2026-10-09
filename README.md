@@ -56,6 +56,9 @@ En la siguiente presentación se expone el desarrollo del proyecto asignado, el 
 | Marquez Chávez Kassumy Nallely | 2026630376 |
 | Gutiérrez Cruz Alison | 2026670031 |
 | Suárez Mendoza Lis Rosaura | 2024440302 |
+| Rivera Munguia Ameyali | 2025630902 |
+
+
 
 ### Información académica
 
