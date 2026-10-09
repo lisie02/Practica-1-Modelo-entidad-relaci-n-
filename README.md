@@ -1,6 +1,10 @@
-# Entregables y enlaces
-
 ## 🌱 Proyecto propio: EcoData
+
+## Presentación del proyecto
+
+En la siguiente presentación se expone el desarrollo del proyecto asignado, el modelo entidad-relación y las propuestas de mejora planteadas.
+
+[**Ver presentación en Canva**](https://canva.link/d2wasuvhqncyrit)
 
 **Landing Page:**
 
