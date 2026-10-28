@@ -36,7 +36,7 @@
 
 ### Entorno
 
-- [Archivo Compose](./entorno/compose.yaml)
+- [Archivo Compose](./entorno/compose.yml)
 
 ### Evidencias
 
