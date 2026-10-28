@@ -71,7 +71,7 @@ CREATE TABLE impacto_ambiental (
     id_fuente INT NOT NULL,
     consumo_agua DECIMAL(12,2),
     consumo_energia DECIMAL(12,2),
-    emisiones_co2 DECIMAL(12,2),
+    emisiones_co2 DECIMAL(12,6),
     residuos_generados DECIMAL(12,2),
     nivel_impacto VARCHAR(50),
     fecha_dato DATE,
