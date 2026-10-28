@@ -70,7 +70,8 @@ Diseñar una base de datos que permita registrar y comparar el impacto ambiental
 ### Modelo relacional
 
 - [Diagrama relacional con notación de pata de cuervo](./modelo/diagrama-relacional.png)
-- [Código SQL de la base de datos EcoData](./modelo/ecodata.sql)
+- [Datos de productos e impactos ambientales](./modelo/productos_mexico.sql)
+- [Restricción de disyunción de la jerarquía ISA](./modelo/restriccion_isa.sql)
 - [Inventario del modelo EER](./proyecto-propio/inventario-eer.md)
 
 ## 1. Entidades fuertes, atributos y claves primarias
