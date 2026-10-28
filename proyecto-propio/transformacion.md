@@ -80,3 +80,35 @@ Se revisaron las estructuras de `producto_reutilizable` y `producto_desechable` 
 
 **Resultado:** la estructura de las tablas y la referencia hacia la entidad general fueron verificadas. La exclusividad entre subtipos queda pendiente de una comprobación o restricción adicional.
 
+
+---
+
+## Ejercicio 6. Revisión de atributos especiales y restricciones
+
+### 1. Atributo vida_util
+
+En la tabla `producto`, el atributo `vida_util` se implementó como `INT`. Esta decisión corresponde a un atributo simple que almacena una cantidad entera.
+
+Si el modelo EER aprobado lo define como compuesto por cantidad y unidad, será necesario sustituirlo por dos columnas, por ejemplo, `vida_util_cantidad` y `vida_util_unidad`. Esta modificación se realizará únicamente si corresponde al modelo original entregado.
+
+### 2. Atributos multivaluados
+
+El SQL actual no contiene una tabla para `certificaciones_ambientales`. Si este atributo forma parte del modelo EER aprobado como multivaluado, deberá crearse una tabla adicional con una clave foránea hacia `producto`.
+
+Si el atributo no pertenece al modelo aprobado, no será necesario añadir dicha tabla.
+
+### 3. Atributo nivel_impacto
+
+En `impacto_ambiental`, `nivel_impacto` está definido como `VARCHAR(50)` y se almacena directamente. El SQL actual no contiene una regla que lo calcule a partir de las métricas ambientales.
+
+Si el modelo lo define como derivado, deberá documentarse la fórmula de cálculo y decidir si se obtiene mediante una consulta, una vista o una expresión implementada en la base de datos.
+
+### 4. Restricción de disyunción ISA
+
+Las tablas `producto_reutilizable` y `producto_desechable` comparten la clave `id_producto`, que referencia a `producto`. Sin embargo, las claves foráneas actuales no impiden que el mismo producto aparezca en ambos subtipos.
+
+Si la jerarquía aprobada es disjunta, deberá implementarse una restricción adicional para garantizar que un producto no pertenezca simultáneamente a ambos subtipos.
+
+### 5. Resultado de la revisión
+
+Se verificaron las tablas, las claves primarias, las claves foráneas y la clave primaria compuesta de `producto_material`. Los atributos especiales y la restricción de disyunción quedan sujetos a la comparación final con el modelo EER aprobado antes de realizar cambios en el SQL.
