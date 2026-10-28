@@ -260,6 +260,15 @@ Los registros almacenan el consumo de energía y las emisiones de CO₂ equivale
 Los niveles de impacto registrados son relativos a los tres envases comparados en ese caso de estudio; no representan una clasificación universal. El consumo de agua y los residuos generados se mantienen sin dato cuando la fuente utilizada no proporciona valores para esos atributos.
 
 El país de fabricación de los tres productos se dejó sin especificar, ya que la fuente consultada no confirma el lugar de fabricación de cada envase.
+### Fuente de datos ambientales
+
+Los valores de consumo de energía y emisiones de CO₂ equivalente utilizados en EcoData se obtuvieron de la Tabla III del Caso de estudio I (análisis nacional), publicado por Cabriales Gómez y colaboradores en 2024. El estudio compara envases de PET, vidrio y aluminio de 355 ml utilizados para refrescos en México.
+
+**Referencia en formato APA 7:**
+
+Cabriales Gómez, R. C., Arroyo Mayorga, Y. M., Cobos Zaleta, D., & Reyes Osorio, L. A. (2024). Sustentabilidad de materiales para el envasado de refrescos implementando un Análisis de Ciclo de Vida mediante SolidWorks Sustainability. *Ingenierias, 27*(96), 11–26. https://doi.org/10.29105/ingenierias27.96-947
+
+**Alcance y limitaciones de los datos:** los resultados corresponden al escenario nacional descrito por los autores y no deben interpretarse como valores universales para todos los envases. La base de datos registra actualmente el consumo de energía y las emisiones de CO₂ equivalente. Los valores de acidificación atmosférica y eutrofización del agua reportados por el artículo no se incorporaron porque el esquema actual no contiene atributos específicos para esos indicadores. Tampoco se asignó un país de fabricación a cada producto, ya que no se confirmó ese dato individualmente.
 
 ### Prueba de ejecución repetida
 
