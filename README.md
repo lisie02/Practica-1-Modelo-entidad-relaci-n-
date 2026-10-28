@@ -67,6 +67,12 @@ Diseñar una base de datos que permita registrar y comparar el impacto ambiental
 
 # Ejercicio 2. Inventario del modelo EER del proyecto propio
 
+### Modelo relacional
+
+- [Diagrama relacional con notación de pata de cuervo](./modelo/diagrama-relacional.png)
+- [Código SQL de la base de datos EcoData](./modelo/ecodata.sql)
+- [Inventario del modelo EER](./proyecto-propio/inventario-eer.md)
+
 ## 1. Entidades fuertes, atributos y claves primarias
 
 Las entidades fuertes identificadas en el modelo EER son las siguientes:
