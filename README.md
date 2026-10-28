@@ -107,8 +107,7 @@ Las cardinalidades se expresan como `(mínimo, máximo)`. El mínimo indica si l
 | Relación | Entidades participantes | Cardinalidad mínima y máxima | Justificación |
 |---|---|---|---|
 | Pertenece a | CATEGORÍA — PRODUCTO | CATEGORÍA `(0,N)`; PRODUCTO `(1,1)` | Una categoría puede no tener productos o tener varios; cada producto pertenece a una categoría. |
-| Se fabrica en | PAÍS — PRODUCTO | PAÍS `(0,N)`; PRODUCTO `(1,1)` | Un país puede estar relacionado con varios productos; cada producto tiene un país de fabricación registrado. |
-| Compuesto por | PRODUCTO — MATERIAL | PRODUCTO `(1,N)`; MATERIAL `(0,N)` | Un producto se compone de uno o varios materiales; un material puede utilizarse en distintos productos o todavía no estar asociado a uno. |
+| Se fabrica en | PAÍS — PRODUCTO | PAÍS `(0,N)`; PRODUCTO `(0,1)` | Un país puede estar relacionado con varios productos. Un producto puede tener un país de fabricación registrado o dejarlo sin especificar cuando no existe información confirmada. |
 | Tiene | PRODUCTO — IMPACTO_AMBIENTAL | PRODUCTO `(0,N)`; IMPACTO_AMBIENTAL `(1,1)` | Un producto puede tener varios registros de impacto a lo largo del tiempo; cada registro corresponde a un producto. |
 | Se obtiene de | FUENTE — IMPACTO_AMBIENTAL | FUENTE `(0,N)`; IMPACTO_AMBIENTAL `(1,1)` | Una fuente puede respaldar varios registros; cada registro de impacto se asocia con una fuente. |
 
@@ -231,11 +230,43 @@ Código SQL de EcoData
 
 Verificación de las pruebas de integridad
 
-Implementación y pruebas
+## Implementación y pruebas
 
-El esquema relacional se implementó en PostgreSQL mediante Docker. Se comprobó la creación de nueve tablas, la existencia de ocho claves foráneas y el rechazo de referencias inexistentes. También se verificó que la tabla producto_material impide repetir una misma combinación de producto y material.
+El esquema relacional de EcoData se implementó en PostgreSQL mediante Docker. La base de datos cuenta con nueve tablas: `categoria`, `pais`, `material`, `producto`, `producto_material`, `impacto_ambiental`, `fuente`, `producto_reutilizable` y `producto_desechable`.
 
-La estructura de producto_reutilizable y producto_desechable se verificó mediante sus claves primarias y foráneas. La restricción de disyunción entre ambos subtipos requiere una comprobación o implementación adicional.
+Se verificaron las claves primarias y foráneas de las tablas. También se comprobó que `producto_material` utiliza una clave primaria compuesta por `id_producto` e `id_material`, lo que permite identificar cada relación entre un producto y un material.
+
+### Restricción de la jerarquía ISA
+
+La jerarquía ISA tiene como superclase a `PRODUCTO` y como subclases a `PRODUCTO_REUTILIZABLE` y `PRODUCTO_DESECHABLE`. La disyunción se implementó mediante disparadores definidos en `modelo/restriccion_isa.sql`.
+
+Durante las pruebas se intentó registrar un mismo producto en ambas subclases. PostgreSQL rechazó el segundo registro y mostró el mensaje correspondiente. Posteriormente, se comprobó que no quedaron registros de prueba en ninguna de las dos tablas.
+
+La especialización es parcial, por lo que un producto puede permanecer sin clasificación en las subclases hasta que se disponga de información para determinar si es reutilizable o desechable.
+
+### Datos ambientales de los envases
+
+Se incorporaron tres productos comparativos para envases de refresco de 355 ml: una botella de PET, un envase de vidrio y una lata de aluminio. Cada producto se relacionó con su material principal y con un registro de impacto ambiental asociado a la fuente de la UANL utilizada en el proyecto.
+
+Los registros almacenan el consumo de energía y las emisiones de CO₂ equivalente del caso nacional analizado. Los valores utilizados son:
+
+| Producto | Energía (MJ) | Emisiones (kg CO₂e) |
+|---|---:|---:|
+| Botella PET | 1.8 | 0.095 |
+| Envase de vidrio | 7.6 | 0.813 |
+| Lata de aluminio | 5.1 | 0.301 |
+
+Los niveles de impacto registrados son relativos a los tres envases comparados en ese caso de estudio; no representan una clasificación universal. El consumo de agua y los residuos generados se mantienen sin dato cuando la fuente utilizada no proporciona valores para esos atributos.
+
+El país de fabricación de los tres productos se dejó sin especificar, ya que la fuente consultada no confirma el lugar de fabricación de cada envase.
+
+### Prueba de ejecución repetida
+
+Se ejecutó nuevamente `modelo/productos_mexico.sql` para comprobar que los registros existentes no se duplicaran. El script terminó con `COMMIT` y las instrucciones correspondientes devolvieron `INSERT 0 0`.
+
+La consulta de verificación confirmó la existencia de tres productos, tres relaciones producto-material y tres registros de impacto ambiental después de la segunda ejecución.
+
+Estas pruebas permiten comprobar la integridad referencial, el funcionamiento de la restricción ISA y la prevención de duplicados en los datos incorporados al proyecto.
 
 
 
