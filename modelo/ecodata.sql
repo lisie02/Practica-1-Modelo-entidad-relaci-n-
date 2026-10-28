@@ -30,7 +30,7 @@ CREATE TABLE producto (
     nombre VARCHAR(100) NOT NULL,
     marca VARCHAR(100),
     precio_aproximado DECIMAL(10,2),
-    vida_util INT,
+    vida_util VARCHAR(100),
     id_categoria INT NOT NULL,
     id_pais INT NOT NULL,
     FOREIGN KEY (id_categoria)
