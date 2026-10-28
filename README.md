@@ -213,6 +213,32 @@ Si se modifica el modelo, se actualizará esta sección indicando:
 - **Cambio realizado:** descripción de la modificación.
 - **Justificación:** observación del docente o regla de negocio que motivó el cambio.
 
+Inventario y transformación del modelo EER
+
+Proyecto propio: EcoData
+
+EcoData permite organizar información sobre productos cotidianos y su impacto ambiental, considerando materiales, consumo de agua y energía, emisiones de CO₂, generación de residuos y fuentes de información.
+
+Entregables
+
+Inventario del modelo EER
+
+Diagrama EER original
+
+Diagrama relacional con notación de pata de cuervo
+
+Código SQL de EcoData
+
+Verificación de las pruebas de integridad
+
+Implementación y pruebas
+
+El esquema relacional se implementó en PostgreSQL mediante Docker. Se comprobó la creación de nueve tablas, la existencia de ocho claves foráneas y el rechazo de referencias inexistentes. También se verificó que la tabla producto_material impide repetir una misma combinación de producto y material.
+
+La estructura de producto_reutilizable y producto_desechable se verificó mediante sus claves primarias y foráneas. La restricción de disyunción entre ambos subtipos requiere una comprobación o implementación adicional.
+
+
+
 ## Conclusión
 
 El inventario permite identificar las entidades, sus atributos y claves primarias, las relaciones y sus cardinalidades, la entidad asociativa y la jerarquía de especialización del proyecto EcoData. También anticipa los elementos que requieren tablas adicionales y las claves foráneas necesarias para mantener la integridad referencial.
