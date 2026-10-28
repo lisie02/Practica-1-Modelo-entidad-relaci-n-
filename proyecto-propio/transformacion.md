@@ -41,3 +41,42 @@ La clave primaria de esa tabla será la combinación de `id_producto` y `certifi
 ### 6. Verificación
 
 La transformación se comprobará comparando las entidades y atributos del inventario EER con las tablas y columnas creadas en PostgreSQL. Cualquier diferencia deberá justificarse y documentarse.
+
+---
+
+## Ejercicio 5. Transformación de la jerarquía ISA
+
+### 1. Jerarquía del modelo EER
+
+En EcoData, la entidad general `PRODUCTO` se especializa en dos subtipos:
+
+- `PRODUCTO_REUTILIZABLE`: contiene los atributos `numero_reutilizaciones` y `requiere_mantenimiento`.
+- `PRODUCTO_DESECHABLE`: contiene los atributos `tiempo_descomposicion_anios` y `genera_residuos`.
+
+### 2. Estrategia de transformación
+
+Se eligió conservar una tabla para la entidad general y una tabla independiente para cada subtipo.
+
+| Tabla | Clave primaria | Clave foránea |
+|---|---|---|
+| `producto` | `id_producto` | `id_categoria`, `id_pais` |
+| `producto_reutilizable` | `id_producto` | `id_producto` → `producto(id_producto)` |
+| `producto_desechable` | `id_producto` | `id_producto` → `producto(id_producto)` |
+
+Esta estrategia permite almacenar los atributos comunes en `producto` y los atributos específicos en la tabla correspondiente a cada subtipo.
+
+### 3. Restricciones de la jerarquía
+
+La jerarquía se definió como disjunta y parcial:
+
+- **Disyunción:** un producto no debería pertenecer simultáneamente a `PRODUCTO_REUTILIZABLE` y `PRODUCTO_DESECHABLE`.
+- **Completitud parcial:** un producto puede existir en `PRODUCTO` sin pertenecer todavía a alguno de los subtipos.
+
+Las claves primarias y foráneas garantizan que cada registro de un subtipo corresponda a un producto existente. Sin embargo, por sí solas no impiden que un producto aparezca en ambos subtipos; para garantizar la disyunción se necesita una restricción adicional.
+
+### 4. Comprobación en PostgreSQL
+
+Se revisaron las estructuras de `producto_reutilizable` y `producto_desechable` mediante el comando `\d`. En ambas tablas, `id_producto` está definido como clave primaria y clave foránea hacia `producto`.
+
+**Resultado:** la estructura de las tablas y la referencia hacia la entidad general fueron verificadas. La exclusividad entre subtipos queda pendiente de una comprobación o restricción adicional.
+
