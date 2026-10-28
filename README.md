@@ -108,7 +108,7 @@ Las cardinalidades se expresan como `(mínimo, máximo)`. El mínimo indica si l
 | Relación | Entidades participantes | Cardinalidad mínima y máxima | Justificación |
 |---|---|---|---|
 | Pertenece a | CATEGORÍA — PRODUCTO | CATEGORÍA `(0,N)`; PRODUCTO `(1,1)` | Una categoría puede no tener productos o tener varios; cada producto pertenece a una categoría. |
-| Se fabrica en | PAÍS — PRODUCTO | PAÍS `(0,N)`; PRODUCTO `(0,1)` | Un país puede estar relacionado con varios productos. Un producto puede tener un país de fabricación registrado o dejarlo sin especificar cuando no existe información confirmada. |
+| Se fabrica en | PAÍS — PRODUCTO | PAÍS `(0,N)`; PRODUCTO `(0,1)` | Un país puede estar relacionado con varios productos. El país de fabricación de un producto puede quedar sin especificar cuando no se cuenta con información confirmada. |
 | Tiene | PRODUCTO — IMPACTO_AMBIENTAL | PRODUCTO `(0,N)`; IMPACTO_AMBIENTAL `(1,1)` | Un producto puede tener varios registros de impacto a lo largo del tiempo; cada registro corresponde a un producto. |
 | Se obtiene de | FUENTE — IMPACTO_AMBIENTAL | FUENTE `(0,N)`; IMPACTO_AMBIENTAL `(1,1)` | Una fuente puede respaldar varios registros; cada registro de impacto se asocia con una fuente. |
 
