@@ -46,3 +46,17 @@ Se revisaron las tablas `producto_reutilizable` y `producto_desechable`. En amba
 ## Conclusión
 
 Las pruebas realizadas permiten confirmar que las nueve tablas se crearon correctamente y que las claves foráneas y la clave primaria compuesta funcionan como se esperaba. La estructura de las tablas de la jerarquía ISA también fue verificada. Estas pruebas documentan la implementación inicial del modelo relacional de EcoData en PostgreSQL.
+
+### 6. Pruebas adicionales de restricciones
+
+Se ejecutó el archivo `modelo/pruebas-restricciones.sql` para comprobar el funcionamiento de las restricciones de integridad de EcoData.
+
+Se realizaron tres pruebas:
+
+1. **Restricción NOT NULL:** se intentó registrar una categoría sin nombre. PostgreSQL rechazó la operación.
+2. **Clave foránea de categoría:** se intentó registrar un producto asociado a una categoría inexistente. PostgreSQL rechazó la operación.
+3. **Clave foránea de producto-material:** se intentó registrar una relación que hacía referencia a un producto inexistente. PostgreSQL rechazó la operación.
+
+**Resultado:** las tres pruebas se ejecutaron correctamente. Los datos temporales de prueba no permanecieron en la base de datos.
+
+**Evidencia:** `evidencias/pruebas-restricciones.png`.
