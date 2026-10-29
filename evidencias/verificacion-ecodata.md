@@ -18,6 +18,7 @@ Comprobar la creación de las tablas del modelo relacional y verificar el funcio
 Se ejecutó el archivo `modelo/ecodata.sql` dentro de la base de datos `ecodata`. PostgreSQL respondió con nueve mensajes `CREATE TABLE`, y posteriormente se verificó la existencia de las nueve tablas.
 
 **Resultado:** satisfactorio.
+**Evidencia:** [Verificación de la base de datos](verificacion-ecodata.png).
 
 ### 2. Verificación de claves foráneas
 
@@ -41,7 +42,10 @@ Se comprobó que `producto_material` tiene una clave primaria compuesta por `id_
 
 Se revisaron las tablas `producto_reutilizable` y `producto_desechable`. En ambas, `id_producto` está definido como clave primaria y clave foránea hacia `producto`.
 
-**Resultado:** satisfactorio en cuanto a la estructura de las tablas y sus referencias. La exclusividad entre subtipos debe comprobarse o implementarse por separado si se requiere garantizar la disyunción.
+También se comprobó la restricción de disyunción entre subtipos, verificando que un mismo producto no pueda registrarse simultáneamente como reutilizable y desechable.
+
+**Resultado:** satisfactorio. La estructura de las tablas y la restricción de exclusividad entre subtipos funcionan como se esperaba.
+**Evidencia:** [Prueba de la restricción ISA](prueba-restriccion-isa.png).
 
 ## Conclusión
 
@@ -59,4 +63,4 @@ Se realizaron tres pruebas:
 
 **Resultado:** las tres pruebas se ejecutaron correctamente. Los datos temporales de prueba no permanecieron en la base de datos.
 
-**Evidencia:** `evidencias/pruebas-restricciones.png`.
+**Evidencia:** [Ver captura de las pruebas](pruebas-restricciones.png).
