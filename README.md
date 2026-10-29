@@ -282,13 +282,47 @@ La consulta de verificación confirmó la existencia de tres productos, tres rel
 
 Estas pruebas permiten comprobar la integridad referencial, el funcionamiento de la restricción ISA y la prevención de duplicados en los datos incorporados al proyecto.
 
-
-
 ## Conclusión
 
 El inventario permite identificar las entidades, sus atributos y claves primarias, las relaciones y sus cardinalidades, la entidad asociativa y la jerarquía de especialización del proyecto EcoData. También anticipa los elementos que requieren tablas adicionales y las claves foráneas necesarias para mantener la integridad referencial.
 
 Este registro servirá como lista de verificación durante la transformación al modelo relacional, para comprobar que se conserven los elementos y las restricciones del modelo EER original.
+
+---
+
+## Proyecto asignado
+
+El proyecto asignado es *A Dimensional Data Warehouse for Geospatial Monitoring of Municipal Public Works, with an Evolution Path Toward a Lakehouse Architecture*. Su objetivo es apoyar el monitoreo geoespacial de obras públicas municipales mediante un almacén dimensional, datos históricos y consultas analíticas.
+
+- [Repositorio original del proyecto asignado](https://github.com/gabrielhuav/PublicMunicipalWorks_DWH)
+- [Análisis del esquema](./proyecto-asignado/analisis-del-esquema.pdf)
+- [Análisis del esquema en formato editable](./proyecto-asignado/analisis-del-esquema.md)
+- [Comparación entre los modelos EER y relacional](./proyecto-asignado/comparacion-eer-relacional.pdf)
+- [Comparación en formato editable](./proyecto-asignado/comparacion-eer-relacional.md)
+
+### Gestor de base de datos
+
+Se utilizó PostgreSQL ejecutado mediante Docker. Para el proyecto propio se trabajó con la base `ecodata`; para el proyecto asignado, con la base `obras_publicas`, que contiene el esquema dimensional `warehouse` y el esquema operativo `public`.
+
+## Cambio individual de esquema con IA — Ejercicio 8
+
+La propuesta individual consiste en preparar el esquema para almacenar predicciones de riesgo de retraso de obras públicas, vinculando cada resultado con la obra y el periodo evaluados, la versión del modelo y la fecha de generación.
+
+- [Issue original: predicción inteligente de retrasos en obras públicas](https://github.com/lisie02/Practica-1-Modelo-entidad-relaci-n-/issues/3)
+- [Script del cambio de esquema](./cambios/cambio-lisie02.sql)
+- [Consulta de demostración](./cambios/consulta-prediccion-lisie02.sql)
+- [Nota explicativa en PDF](./cambios/cambio-lisie02.pdf)
+- [Nota explicativa editable](./cambios/cambio-lisie02.md)
+- [Evidencia de ejecución del cambio SQL](./evidencias/ejercicio8/01-ejecucion-cambio-sql.png)
+- [Evidencia de la consulta de predicción](./evidencias/ejercicio8/02-consulta-prediccion.png)
+- [Evidencia de verificación de tablas y rollback](./evidencias/ejercicio8/03-verificacion-tablas-y-rollback.png)
+
+La consulta realizada utiliza datos demostrativos y no representa la salida de un modelo de aprendizaje automático entrenado. El esquema quedó preparado para registrar predicciones, pero el entrenamiento y la validación de un modelo real son trabajos posteriores.
+
+## Declaración del uso de inteligencia artificial generativa
+
+Se utilizó ChatGPT como herramienta de apoyo para revisar el enunciado de la práctica, proponer borradores de documentación, orientar la escritura de scripts SQL y explicar los resultados de las pruebas. Los scripts se ejecutaron en PostgreSQL y se verificaron sus resultados. La estudiante revisó los cambios y debe poder explicar las decisiones de diseño y las restricciones implementadas.
+
 
 ---
 
@@ -302,3 +336,6 @@ La Práctica 3 se está trabajando en la rama `practica-3` del repositorio del e
 - Docker para ejecutar el entorno de PostgreSQL.
 - Visual Studio Code como editor.
 - Git y GitHub para el control de versiones y la colaboración.
+
+
+
