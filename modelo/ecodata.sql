@@ -32,7 +32,7 @@ CREATE TABLE producto (
     precio_aproximado DECIMAL(10,2),
     vida_util VARCHAR(100),
     id_categoria INT NOT NULL,
-    id_pais INTEGER REFERENCES pais(id_pais),
+    id_pais INTEGER,
     FOREIGN KEY (id_categoria)
         REFERENCES categoria(id_categoria),
     FOREIGN KEY (id_pais)
