@@ -1,0 +1,51 @@
+Ejecución del ejercicio 8 sobre una copia de la base del proyecto asignado
+Gestor: PostgreSQL 16.15    Fecha: 2026-10-28 23:55
+
+=== 1. Copia de la base
+obras=# CREATE DATABASE obras_copia_alison TEMPLATE obras_publicas;
+CREATE DATABASE
+
+=== 2. Consulta ANTES del cambio (debe fallar)
+$ psql -d obras_copia_alison -f consulta-alison.sql
+psql:consulta-alison.sql:25: ERROR:  relation "warehouse.prediccion_retraso" does not exist
+LINE 11: FROM warehouse.prediccion_retraso p
+              ^
+
+=== 3. Cambio de esquema
+$ psql -d obras_copia_alison -f cambio-alison.sql
+BEGIN
+CREATE TABLE
+CREATE TABLE
+CREATE INDEX
+COMMIT
+
+=== 4. Datos de prueba
+$ psql -d obras_copia_alison -f datos-prueba-alison.sql
+BEGIN
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 4
+INSERT 0 4
+INSERT 0 1
+INSERT 0 4
+COMMIT
+
+=== 5. Consulta DESPUÉS del cambio
+$ psql -d obras_copia_alison -f consulta-alison.sql
+  obra_id  |           nombre_obra           | avance_fisico | retraso_actual | prob_retraso | nivel_riesgo | fecha_planeada | fecha_estimada |        modelo         |   generado_en    
+-----------+---------------------------------+---------------+----------------+--------------+--------------+----------------+----------------+-----------------------+------------------
+ OBRA-1001 | Puente vehicular arroyo La Loma |            34 |              0 |       0.8640 | Alto         | 2026-12-15     | 2027-02-27     | v1.0.0 (RandomForest) | 2026-10-28 23:55
+ OBRA-1002 | Centro de salud comunitario     |            41 |              0 |       0.7210 | Alto         | 2026-11-30     | 2027-01-10     | v1.0.0 (RandomForest) | 2026-10-28 23:55
+ OBRA-1004 | Cancha de usos múltiples        |            46 |              0 |       0.4350 | Medio        | 2026-11-15     | 2026-11-27     | v1.0.0 (RandomForest) | 2026-10-28 23:55
+(3 rows)
+
+
+=== 6. Las restricciones nuevas rechazan datos inválidos
+obras_copia_alison=# INSERT ... (nivel de riesgo no válido)
+ERROR:  new row for relation "prediccion_retraso" violates check constraint "ck_retraso_nivel"
+DETAIL:  Failing row contains (5, 20260930, 34, 1, 0.5000, 10, 2026-12-31, Urgente, 2026-10-28 23:55:40.050561-06).
+obras_copia_alison=# INSERT ... (misma obra, mes y versión del modelo)
+ERROR:  duplicate key value violates unique constraint "uq_retraso_hecho_modelo"
+DETAIL:  Key (tiempo_key, obra_key, modelo_key)=(20260930, 34, 1) already exists.
