@@ -1,0 +1,52 @@
+Ejecución del ejercicio 8 sobre una copia de la base del proyecto asignado
+Gestor: PostgreSQL 16.15    Fecha: 2026-10-28 23:48
+
+=== 1. Copia de la base
+obras=# CREATE DATABASE obras_copia TEMPLATE obras_publicas;
+CREATE DATABASE
+
+=== 2. Consulta ANTES del cambio (debe fallar)
+$ psql -d obras_copia -f consulta-usuario.sql
+psql:consulta-usuario.sql:26: ERROR:  relation "warehouse.prediccion_anomalia" does not exist
+LINE 10: FROM warehouse.prediccion_anomalia p
+              ^
+
+=== 3. Cambio de esquema
+$ psql -d obras_copia -f cambio-usuario.sql
+BEGIN
+CREATE TABLE
+CREATE TABLE
+CREATE INDEX
+COMMIT
+
+=== 4. Datos de prueba
+$ psql -d obras_copia -f datos-prueba-usuario.sql
+BEGIN
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 4
+INSERT 0 4
+INSERT 0 1
+INSERT 0 4
+COMMIT
+
+=== 5. Consulta DESPUÉS del cambio
+$ psql -d obras_copia -f consulta-usuario.sql
+  obra_id  |            nombre_obra             | avance_fisico | avance_pagado | puntaje_ml | anomalia_ml |         modelo         |   generado_en    | anomalia_reglas 
+-----------+------------------------------------+---------------+---------------+------------+-------------+------------------------+------------------+-----------------
+ OBRA-0003 | Rehabilitación de escuela primaria |            25 |            80 |    0.91700 | t           | IsolationForest v1.0.0 | 2026-10-28 23:48 | f
+ OBRA-0001 | Pavimentación calle Hidalgo        |            95 |            92 |    0.31200 | f           | IsolationForest v1.0.0 | 2026-10-28 23:48 | f
+ OBRA-0002 | Red de agua potable Barrio Alto    |            60 |            63 |    0.28400 | f           | IsolationForest v1.0.0 | 2026-10-28 23:48 | f
+ OBRA-0004 | Alumbrado público carretera        |            52 |            53 |    0.26900 | f           | IsolationForest v1.0.0 | 2026-10-28 23:48 | f
+(4 rows)
+
+
+=== 6. Las restricciones nuevas rechazan datos inválidos
+obras_copia=# INSERT ... (hecho que no existe)
+ERROR:  insert or update on table "prediccion_anomalia" violates foreign key constraint "fk_prediccion_hecho"
+DETAIL:  Key (tiempo_key, obra_key)=(20260930, 999) is not present in table "fact_obra_mensual".
+obras_copia=# INSERT ... (puntaje fuera de 0-1)
+ERROR:  new row for relation "prediccion_anomalia" violates check constraint "ck_puntaje_rango"
+DETAIL:  Failing row contains (6, 20260930, 34, 1, 1.70000, t, 2026-10-28 23:48:12.224045-06).
