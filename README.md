@@ -45,6 +45,10 @@
 - [Creación de la base de datos EcoData](./evidencias/ejercicio1-ecodata.png)
 - [Verificación de obras públicas en PostgreSQL](./evidencias/verificacion-obras-publicas.png)
 
+### Proyecto propio
+- [Diccionario de datos de EcoData (PDF)](./proyecto-propio/diccionario-de-datos.pdf)
+- [Diccionario de datos editable](./proyecto-propio/diccionario-de-datos.md)
+
 ---
 
 ## Introducción
