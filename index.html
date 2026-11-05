@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoData | Impacto Ambiental</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5efe7;
+            color: #3b2529;
+        }
+
+        header {
+            background: #65152d;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 70px 8%;
+        }
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            color: #65152d;
+        }
+
+        .hero-text h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background: #65152d;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .visual {
+            background: #ead9cd;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 130px;
+        }
+
+        .indicators {
+            background: white;
+            padding: 45px 8%;
+            text-align: center;
+        }
+
+        .indicators h2 {
+            color: #65152d;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #f5efe7;
+            padding: 25px;
+            width: 180px;
+            border-radius: 12px;
+        }
+
+        .card span {
+            font-size: 35px;
+        }
+
+        .card h3 {
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #65152d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 800px) {
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .visual {
+                width: 280px;
+                height: 280px;
+                font-size: 90px;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            EcoData 🌱
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#indicadores">Indicadores</a>
+            <a href="#proyecto">Proyecto</a>
+        </nav>
+
+    </header>
+
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-text">
+
+            <h1>EcoData</h1>
+
+            <h2>
+                Conoce el impacto ambiental de lo que consumes.
+            </h2>
+
+            <p>
+                Una propuesta de base de datos para consultar,
+                comparar y organizar información ambiental
+                de productos cotidianos.
+            </p>
+
+            <a href="#indicadores" class="button">
+                Explorar información
+            </a>
+
+        </div>
+
+
+        <div class="visual">
+            🌎
+        </div>
+
+    </section>
+
+
+    <section class="indicators" id="indicadores">
+
+        <h2>
+            ¿Qué podemos conocer?
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <span>💧</span>
+                <h3>Agua</h3>
+                <p>Consumo de agua</p>
+            </div>
+
+            <div class="card">
+                <span>⚡</span>
+                <h3>Energía</h3>
+                <p>Consumo energético</p>
+            </div>
+
+            <div class="card">
+                <span>💨</span>
+                <h3>CO₂</h3>
+                <p>Emisiones</p>
+            </div>
+
+            <div class="card">
+                <span>♻️</span>
+                <h3>Reciclaje</h3>
+                <p>Posibilidad de reciclaje</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="indicators" id="proyecto">
+
+        <h2>
+            ¿Para qué sirve EcoData?
+        </h2>
+
+        <p>
+            Organizar información ambiental para facilitar
+            la consulta y comparación de productos cotidianos.
+        </p>
+
+    </section>
+
+
+    <footer>
+
+        EcoData | Práctica 1 — Modelo Entidad-Relación
+
+    </footer>
+
+</body>
+</html>
