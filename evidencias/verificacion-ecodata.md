@@ -1,0 +1,66 @@
+# Verificación de la base de datos EcoData
+
+## Objetivo
+
+Comprobar la creación de las tablas del modelo relacional y verificar el funcionamiento de las claves primarias, claves foráneas y restricciones de integridad en PostgreSQL mediante Docker.
+
+## Entorno de prueba
+
+- **Proyecto:** EcoData: Impacto ambiental de productos cotidianos.
+- **Gestor de bases de datos:** PostgreSQL.
+- **Contenedor:** `practica1`.
+- **Base de datos:** `ecodata`.
+
+## Pruebas realizadas
+
+### 1. Creación de las tablas
+
+Se ejecutó el archivo `modelo/ecodata.sql` dentro de la base de datos `ecodata`. PostgreSQL respondió con nueve mensajes `CREATE TABLE`, y posteriormente se verificó la existencia de las nueve tablas.
+
+**Resultado:** satisfactorio.
+**Evidencia:** [Verificación de la base de datos](verificacion-ecodata.png).
+
+### 2. Verificación de claves foráneas
+
+Se consultaron las restricciones de tipo `FOREIGN KEY` en el esquema `public`. Se identificaron ocho claves foráneas que relacionan los productos con sus categorías y países, los materiales con los productos, los impactos ambientales con los productos y las fuentes, y los subtipos con la entidad principal `producto`.
+
+**Resultado:** satisfactorio.
+
+### 3. Rechazo de referencias inexistentes
+
+Se intentó insertar un producto que referenciaba una categoría y un país inexistentes. PostgreSQL rechazó la operación por una violación de clave foránea.
+
+**Resultado:** satisfactorio. La integridad referencial impidió registrar una referencia inválida.
+
+### 4. Verificación de la clave primaria compuesta
+
+Se comprobó que `producto_material` tiene una clave primaria compuesta por `id_producto` e `id_material`. En una prueba, PostgreSQL rechazó la inserción duplicada de la combinación `(1, 1)`.
+
+**Resultado:** satisfactorio. La restricción impide repetir la misma combinación de producto y material.
+
+### 5. Verificación de la jerarquía ISA
+
+Se revisaron las tablas `producto_reutilizable` y `producto_desechable`. En ambas, `id_producto` está definido como clave primaria y clave foránea hacia `producto`.
+
+También se comprobó la restricción de disyunción entre subtipos, verificando que un mismo producto no pueda registrarse simultáneamente como reutilizable y desechable.
+
+**Resultado:** satisfactorio. La estructura de las tablas y la restricción de exclusividad entre subtipos funcionan como se esperaba.
+**Evidencia:** [Prueba de la restricción ISA](prueba-restriccion-isa.png).
+
+## Conclusión
+
+Las pruebas realizadas permiten confirmar que las nueve tablas se crearon correctamente y que las claves foráneas y la clave primaria compuesta funcionan como se esperaba. La estructura de las tablas de la jerarquía ISA también fue verificada. Estas pruebas documentan la implementación inicial del modelo relacional de EcoData en PostgreSQL.
+
+### 6. Pruebas adicionales de restricciones
+
+Se ejecutó el archivo `modelo/pruebas-restricciones.sql` para comprobar el funcionamiento de las restricciones de integridad de EcoData.
+
+Se realizaron tres pruebas:
+
+1. **Restricción NOT NULL:** se intentó registrar una categoría sin nombre. PostgreSQL rechazó la operación.
+2. **Clave foránea de categoría:** se intentó registrar un producto asociado a una categoría inexistente. PostgreSQL rechazó la operación.
+3. **Clave foránea de producto-material:** se intentó registrar una relación que hacía referencia a un producto inexistente. PostgreSQL rechazó la operación.
+
+**Resultado:** las tres pruebas se ejecutaron correctamente. Los datos temporales de prueba no permanecieron en la base de datos.
+
+**Evidencia:** [Ver captura de las pruebas](pruebas-restricciones.png).
