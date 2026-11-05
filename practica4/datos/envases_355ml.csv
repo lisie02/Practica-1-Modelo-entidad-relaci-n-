@@ -1,0 +1,4 @@
+material,energia_mj,huella_carbono_kg_co2e,acidificacion_mol_h_e,eutrofizacion_kg_n_e
+PET,1.8,0.095,0.017,0.000012
+Vidrio,7.6,0.813,0.172,0.000240
+Aluminio,5.1,0.301,0.078,0.000036
