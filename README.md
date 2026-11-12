@@ -389,3 +389,48 @@ La Práctica 3 se está trabajando en la rama `practica-3` del repositorio del e
 
 
 
+
+---
+
+# Practica 5. Edicion de valores e integridad referencial
+
+En esta practica se trabajaron las operaciones DML, las restricciones de integridad referencial y las transacciones en PostgreSQL.
+
+## Documentacion del proyecto propio: EcoData
+
+- [Claves foraneas y relaciones del modelo](./practica5/referencias.md)
+- [Pruebas de integridad referencial](./practica5/pruebas-referenciales.md)
+- [Edicion de valores y transacciones](./practica5/edicion-de-valores.md)
+
+## Proyecto asignado: Obras publicas municipales
+
+- [Integridad referencial del almacen dimensional](./practica5/integridad-almacen.md)
+
+## Scripts SQL
+
+| Archivo | Descripcion |
+|---|---|
+| [001-acciones-referenciales.sql](./practica5/sql/001-acciones-referenciales.sql) | Configuracion de acciones referenciales en EcoData. |
+| [002-pruebas-referenciales.sql](./practica5/sql/002-pruebas-referenciales.sql) | Pruebas de RESTRICT, SET NULL, CASCADE y claves foraneas. |
+| [003-verificacion-integridad.sql](./practica5/sql/003-verificacion-integridad.sql) | Verificacion de integridad en las dos bases. |
+| [004-borrado-logico.sql](./practica5/sql/004-borrado-logico.sql) | Incorporacion de la columna activo en la copia de pruebas. |
+| [005-edicion-transacciones.sql](./practica5/sql/005-edicion-transacciones.sql) | Operaciones INSERT, UPDATE, DELETE y SAVEPOINT. |
+| [006-transaccion-fallida.sql](./practica5/sql/006-transaccion-fallida.sql) | Prueba de reversibilidad ante una restriccion CHECK. |
+| [007-verificacion-almacen.sql](./practica5/sql/007-verificacion-almacen.sql) | Comprobaciones del almacen de obras publicas. |
+| [008-cambio-lisie-mendoza.sql](./practica5/sql/008-cambio-lisie-mendoza.sql) | Cambio individual de RESTRICT a CASCADE. |
+| [009-prueba-cascade-lisie-mendoza.sql](./practica5/sql/009-prueba-cascade-lisie-mendoza.sql) | Comparacion del borrado con CASCADE. |
+
+## Trabajo individual: Lisie Mendoza
+
+- [Documento individual firmado](./practica5/integrantes/lisie-mendoza.md)
+- [Evidencias del ejercicio 2.6](./practica5/evidencias/ejercicio-2.6/)
+
+### Evidencias
+
+1. [Comportamiento original RESTRICT](./practica5/evidencias/ejercicio-2.6/01-restrict-original.png)
+2. [Migracion de RESTRICT a CASCADE](./practica5/evidencias/ejercicio-2.6/02-migracion-cascade.png)
+3. [Comparacion antes y despues del borrado](./practica5/evidencias/ejercicio-2.6/03-borrado-cascade-antes-despues.png)
+4. [Comprobacion del ROLLBACK](./practica5/evidencias/ejercicio-2.6/04-rollback-conteos-restaurados.png)
+
+**Nota:** El cambio individual se ejecuto en la copia `ecodata_individual_lisie`. La base original `ecodata` no fue modificada.
+
