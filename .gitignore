@@ -16,3 +16,7 @@ Desktop.ini
 
 # Python
 __pycache__/
+node_modules/
+.env
+npm-debug.log*
+.DS_Store
