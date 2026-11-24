@@ -35,6 +35,7 @@ if (process.env.DB_SSL === 'true') {
 const pool = new Pool({ ...poolConfig, max: 10, idleTimeoutMillis: 30000, connectionTimeoutMillis: 5000 });
 pool.on('error', (err) => console.error('Error inesperado del pool PostgreSQL:', err.message));
 
+app.set('trust proxy', 1);
 app.disable('x-powered-by');
 app.use(helmet({ contentSecurityPolicy: false, crossOriginEmbedderPolicy: false }));
 app.use(express.json({ limit: '32kb' }));
